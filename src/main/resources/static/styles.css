@@ -1,0 +1,739 @@
+h1{
+  color: #E1EEBC
+}
+body{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  font-family: Tahoma;
+  font-size: 16px;
+  background-color: #497D74;
+  color: white;
+}
+
+h1, p{
+  text-align:center;
+}
+
+form{
+  width: 60vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  background-color: #003C43;
+  opacity: 0,5;
+}
+
+fieldset{
+  border: none;
+  padding: 1rem 0;
+  border-bottom: 3px solid #E1EEBC
+}
+
+fieldset:last-of-type{
+  border-bottom: none;
+}
+
+label{
+  display:block;
+  margin: 0.5rem 0;
+}
+
+input, textarea, select{
+  margin: 10px, 0 0 0;
+  width: 100%;
+  min-height: 3em;
+}
+
+input, textarea{
+  background-color: white;
+  border: 1px solid #003C43;
+  color: #003C43;
+}
+.inline{
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+input[type="submit"]{
+  display: block;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  min-width:300px; 
+  background-color: #4a3ab3;
+  color: #E3FEF7;
+}
+
+body.index {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  background-color: #497D74;
+}
+body.index h1{
+  margin-top: 40px;
+  font-size: 4rem;
+  color: #E1EEBC;
+}
+body.index .btn-main {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color:#4a3ab3;
+}
+body.index .link-create {
+  margin-top: 20px;
+  display: block;
+  font-size: 1rem;
+  color: #E1EEBC;
+}
+
+/*Section allObjects*/
+
+body.allObjects {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+body.allObjects header {
+  background-color: #003C43;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+body.allObjects header h1 {
+  color: #E1EEBC;
+  font-size: 2.5rem;
+  margin: 0;
+
+}
+
+body.allObjects .category-list {
+  background-color: #829ea1;
+  color: #003C43;
+  padding: 1.5rem;
+  border-radius: 8px; /* Opcional: para que se vea mejor en la vista móvil */
+}
+
+body.allObjects .category-list h5 {
+color: #E1EEBC;
+margin-bottom: 1rem;
+}
+
+body.allObjects .category-list li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+body.allObjects .main-content {
+  background-color: #497D74;
+  min-height: 100vh;
+  padding: 2rem;
+  color: #fff;
+}
+.custom-header {
+  background-color: #003C43; /* puedes cambiar este color a cualquier código HEX, RGB o nombre */
+}
+body.allObjects .content-section {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+body.allObjects .content-section h4 {
+  margin: 0;
+}
+
+
+body.newObject form{
+  padding-top: 1em; ;
+}
+
+body.newObject h2{
+  color: #E1EEBC;
+  text-align: center;
+}
+body.newObject .btn-primary{
+  text-align: center;
+  background-color: #4a3ab3;
+  color: #E1EEBC;
+}
+
+.btn-post-item {
+    background-color: #497D74; /* Naranja oscuro (puedes usar cualquier color) */
+    border-color: #497D74;     /* Es bueno que el borde coincida */
+    color: #E1EEBC;              /* Color del texto */
+}
+
+/* Estilo para cuando pasas el ratón por encima (opcional pero recomendado) */
+.btn-post-item:hover {
+    background-color: #003C43; /* Un tono un poco más oscuro */
+    border-color: #003C43;
+    color: #E1EEBC;
+}
+.btn-delete-item {
+    background-color: #e60101; /* Naranja oscuro (puedes usar cualquier color) */
+    border-color: #e60101;     /* Es bueno que el borde coincida */
+    color: white;              /* Color del texto */
+}
+
+/* Estilo para cuando pasas el ratón por encima (opcional pero recomendado) */
+.btn-delete-item:hover {
+    background-color: #a50000; /* Un tono un poco más oscuro */
+    border-color: #a50000;
+    color: white;
+}
+
+
+
+body.scanner {
+  text-align: center;
+}
+
+
+/* Homepage (Index.html) */
+
+body.index-landing {
+    font-family: 'Poppins', sans-serif;
+    background-color: #497D74;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.landing-overlay {
+    display: none; 
+}
+
+.landing-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.landing-content h1 {
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #E1EEBC;
+}
+
+.landing-content .lead {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.landing-content .info-section {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-weight: 400;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.landing-content .cta-section .btn-primary {
+    background-color: #003C43;
+    border-color: #003C43;
+    padding: 10px 30px;
+    font-weight: 600;
+    color: #E1EEBC;
+}
+.landing-content .cta-section .btn-primary:hover {
+    background-color: #002a2e;
+    border-color: #002a2e;
+}
+
+.landing-content .cta-section .btn-secondary {
+    background-color: transparent;
+    border: 2px solid #E1EEBC;
+    color: #E1EEBC;
+    padding: 10px 30px;
+    font-weight: 600;
+}
+.landing-content .cta-section .btn-secondary:hover {
+    background-color: #E1EEBC;
+    color: #003C43;
+}
+
+/* =================================================================== */
+/* V-- NUEVOS ESTILOS PARA LA PÁGINA DE LOGIN (AÑADIDOS) --V           */
+/* =================================================================== */
+body.login-page {
+    font-family: 'Poppins', sans-serif; /* Misma fuente que la landing page */
+    background-color: #497D74; /* Mismo color de fondo principal */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login-form-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    background-color: #003C43; /* Color oscuro de tu paleta para el contenedor */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    color: #E1EEBC; /* Color de acento para el texto */
+}
+
+/* Sobrescribimos el estilo genérico de <form> solo dentro de este contenedor */
+.login-form-container form {
+    background-color: transparent;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+
+.login-form-container h2 {
+    font-weight: 600;
+    margin-bottom: 0rem;
+    color: #E1EEBC;
+    text-align: center;
+}
+
+.login-form-container .form-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #497D74;
+    color: #003C43;
+    height: fit-content;
+}
+.login-form-container .form-floating .form-control {
+    height: calc(4rem + 10px); 
+}
+
+.login-form-container .form-control:focus {
+    background-color: white;
+    border-color: #E1EEBC;
+    box-shadow: 0 0 0 0.25rem rgba(225, 238, 188, 0.25);
+}
+
+.login-form-container .form-floating > label {
+    color: #497D74;
+}
+
+.login-form-container .btn-primary {
+    background-color: #4a3ab3;
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 12px;
+    transition: background-color 0.2s;
+}
+
+.login-form-container .btn-primary:hover {
+    background-color: #3421b3;
+}
+
+.login-form-container .register-link {
+    text-align: center;
+    color: white;
+}
+
+.login-form-container .register-link a {
+    color: #E1EEBC;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-form-container .register-link a:hover {
+    text-decoration: underline;
+}
+
+.alert-container {
+    min-height: 60px; /* Espacio para que no salte el layout cuando aparezcan las alertas */
+}
+
+/*allObjets estilo de presentacion de items*/
+.card {
+    /* Transiciones suaves para el efecto hover */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    height: 100%; /* Asegura que todas las tarjetas en una fila tengan la misma altura */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta ligeramente */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Añade una sombra más pronunciada */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Altura fija para que todas las imágenes sean iguales */
+    object-fit: cover; /* Evita que las imágenes se estiren o deformen */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column; /* Organiza el contenido en una columna */
+    justify-content: space-between; /* Empuja el botón hacia el fondo */
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* newObject */
+body.newObject-page {
+    font-family: 'Poppins', sans-serif;
+    background-color: #497D74;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Contenedor principal del formulario, oscuro y centrado */
+.newObject-page .form-container {
+    padding: 30px;
+    background-color: #003C43;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    color: #E1EEBC;
+}
+
+/* Quita los estilos genéricos de <form> que interferían */
+.newObject-page .form-container form {
+    background-color: transparent;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para el título H2 */
+.newObject-page .form-container h2 {
+    color: #E1EEBC;
+    font-weight: 600;
+}
+
+
+
+.newObject-page .form-floating .form-control,
+.newObject-page .form-floating .form-select {
+    /* Aumentamos la altura de los campos a 58px, el estándar de Bootstrap */
+    height: 75px !important;
+    height: 75px !important; /* Anulamos el min-height: 2em de la regla general */
+}
+
+/* Ajustamos el padding del texto dentro del input para centrarlo verticalmente */
+.newObject-page .form-floating .form-control {
+    padding-top: 1.625rem;
+    padding-bottom: 0.625rem;
+}
+
+/* Ajustamos la posición de la etiqueta flotante para que coincida con la nueva altura */
+.newObject-page .form-floating > label {
+    padding-top: 0.8rem; /* Pequeño ajuste para que se vea bien */
+    color: #497D74;
+}
+
+/* Estilo para el input de archivo, que no es flotante */
+.newObject-page .form-control[type="file"] {
+    height: auto; /* Dejamos que el input de archivo tenga su altura normal */
+}
+
+/* Enlace para volver atrás */
+.newObject-page .back-link {
+    color: #E1EEBC;
+    text-decoration: none;
+}
+.newObject-page .back-link:hover {
+    text-decoration: underline;
+}
+
+/* Heredamos el estilo del botón del formulario de login */
+.newObject-page .btn-primary {
+    background-color: #4a3ab3;
+    color: white;
+    border: none;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.newObject-page .btn-primary:hover {
+    background-color: #3421b3;
+}
+
+
+/* V--  ITEM DETAIL --V     
+/* Estilo para el fondo de la página */
+body.itemDetail-page {
+    font-family: 'Poppins', sans-serif;
+    background-color: #497D74;
+    color: white;
+}
+
+/* Contenedor principal del item, oscuro y centrado */
+.itemDetail-page .item-card {
+    padding: 40px;
+    background-color: #003C43;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Estilo para la imagen principal */
+.itemDetail-page .item-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 3px solid rgba(255,255,255,0.1);
+}
+
+/* Estilo para el título H2 */
+.itemDetail-page .item-title {
+    color: #E1EEBC;
+    font-weight: 600;
+}
+
+/* Línea divisoria */
+.itemDetail-page .item-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Contenedor de los detalles (descripción, categoría, etc.) */
+.itemDetail-page .item-details p {
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Estilo para las etiquetas de los detalles */
+.itemDetail-page .item-details strong {
+    color: #E1EEBC;
+    font-weight: 500;
+}
+
+/* Contenedor de los botones de acción */
+.itemDetail-page .action-buttons .btn {
+    padding: 12px 20px;
+    font-weight: 600;
+    margin: 5px; /* Espacio entre botones si aparecen varios */
+}
+
+/* Enlace para volver atrás */
+.itemDetail-page .back-link {
+    color: #E1EEBC;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.itemDetail-page .back-link:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+/* V-- BARCODE --V                 */
+/* Estilo para el fondo de la página */
+body.barcode-page {
+    font-family: 'Poppins', sans-serif;
+    background-color: #497D74;
+    color: white;
+}
+.barcode-page .barcode-card .text-muted {
+    color: white !important; 
+    font-size: 1.2rem;       
+    font-family: 'Courier New', Courier, monospace; 
+    letter-spacing: 2px;     
+    background-color: rgba(0, 0, 0, 0.2); 
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block; 
+}
+
+/* Contenedor principal del código de barras, oscuro y centrado */
+.barcode-page .barcode-card {
+    padding: 40px;
+    background-color: #003C43;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Estilo para el título H2 */
+.barcode-page .page-title {
+    color: #E1EEBC;
+    font-weight: 600;
+}
+
+/* Estilo para el subtítulo/párrafo */
+.barcode-page .page-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Contenedor del código de barras para que parezca una etiqueta */
+.barcode-page #barcode-wrapper {
+    background-color: white;
+    padding: 20px 10px;
+    border-radius: 8px;
+    display: inline-block; /* Para que se ajuste al tamaño del SVG */
+}
+
+/* Contenedor de los botones de acción */
+.barcode-page .action-buttons .btn {
+    padding: 12px 20px;
+    font-weight: 600;
+}
+
+/* Enlace para volver atrás */
+.barcode-page .back-link {
+    color: #E1EEBC;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.barcode-page .back-link:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+
+/* =================================================================== */
+/* V-- ESTILOS VISUALES PARA LA PÁGINA DEL ESCÁNER --V                */
+/* =================================================================== */
+
+/* Estilo para el fondo de la página */
+body.scanner-page {
+    font-family: 'Poppins', sans-serif;
+    background-color: #497D74;
+    color: white;
+}
+
+/* Contenedor principal del escáner, oscuro y centrado */
+.scanner-page .scanner-card {
+    padding: 40px;
+    background-color: #003C43;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Estilo para el título H2 */
+.scanner-page .page-title {
+    color: #E1EEBC;
+    font-weight: 600;
+}
+
+/* Estilo para el subtítulo/párrafo */
+.scanner-page .page-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Contenedor del visor del escáner */
+.scanner-page #scanner-wrapper {
+    background-color: #002a2e; /* Un fondo ligeramente más claro */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilo para el elemento donde se renderiza el escáner */
+.scanner-page #reader {
+    border-radius: 5px;
+    overflow: hidden; /* Oculta cualquier desbordamiento del video */
+}
+
+/* Contenedor de los mensajes de estado */
+.scanner-page #status-container {
+    min-height: 50px; /* Evita que el layout salte al cambiar el texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* Enlace para volver atrás */
+.scanner-page .back-link {
+    color: #E1EEBC;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.scanner-page .back-link:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+/* =================================================================== */
+/* V-- ESTILOS VISUALES PARA LA PÁGINA DE DELETE ITEM --V             */
+/* =================================================================== */
+
+/* Estilo para el fondo de la página */
+body.deleteItem-page {
+    font-family: 'Poppins', sans-serif;
+    background-color: #497D74;
+    color: white;
+}
+
+/* Contenedor principal, oscuro y centrado */
+.deleteItem-page .delete-card {
+    padding: 40px;
+    background-color: #003C43;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Estilo para el título y subtítulo */
+.deleteItem-page .page-title {
+    color: #E1EEBC;
+    font-weight: 600;
+}
+.deleteItem-page .page-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Línea divisoria */
+.deleteItem-page .page-divider {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo para cada entrada en la lista de borrado */
+.deleteItem-page .item-entry {
+    background-color: #002a2e; /* Un poco más claro que el fondo de la tarjeta */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+.deleteItem-page .item-entry:hover {
+    background-color: #00353a; /* Se ilumina un poco al pasar el ratón */
+}
+
+/* Estilo para la información del dueño */
+.deleteItem-page .owner-info {
+    display: block; /* Para que aparezca en una nueva línea */
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+}
+
+/* Enlace para volver atrás */
+.deleteItem-page .back-link {
+    color: #E1EEBC;
+    text-decoration: none;
+}
+.deleteItem-page .back-link:hover {
+    text-decoration: underline;
+}
+
+/* ================================================= */
+/* === ESTILO PARA TARJETAS CLICABLES (DELETE) === */
+/* ================================================= */
+
+/* Hace que la tarjeta parezca un botón al pasar el ratón */
+.card-clickable:hover {
+    cursor: pointer; /* Cambia el cursor a una manita */
+    border-color: #dc3545 !important; /* Resalta el borde en rojo (opcional) */
+    transform: translateY(-2px); /* Un pequeño salto para feedback */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}

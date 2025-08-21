@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to ShareIT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/styles.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="index-landing">
+
+    <div class="landing-overlay"></div>
+
+    <div class="container landing-content text-center">
+        
+        <h1 class="display-3 mb-3">ShareIT</h1>
+        
+        <p class="lead mb-4">
+            You bought a drill just to use it once a year? Is the camping tent just gathering dust?<br>
+            Don't just own it. <strong>Share it.</strong>
+        </p>
+        
+        <div class="info-section">
+            <p>
+                <strong>ShareIT</strong> is a community platform designed to connect people who have things they don't often use with people who need them.
+                Reduce waste, save money, and build a stronger community by sharing instead of buying.
+            </p>
+        </div>
+        
+        <div class="cta-section mt-5">
+            <p class="mb-3">Ready to join the sharing economy?</p>
+            <a href="/login" class="btn btn-primary btn-lg me-2">Log In</a>
+            <a href="/register" class="btn btn-secondary btn-lg">Register Here</a>
+        </div>
+        
+    </div>
+
+</body>
+</html>

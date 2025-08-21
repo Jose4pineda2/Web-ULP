@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+<head>
+    <meta charset="UTF-8"><title>ShareIT Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body class="allObjects">
+<header class="custom-header text-white p-3 mb-4">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <h1>ShareIT</h1>
+        <div>
+            <span sec:authorize="isAuthenticated()" class="me-1"><strong class="fs-6" th:text="${user.name}">User</strong></span>
+            <form th:action="@{/logout}" method="post" sec:authorize="isAuthenticated()" class="d-inline">
+                <button type="submit" class="btn btn-sm btn-outline-light">Logout</button>
+            </form>
+            <a th:href="@{/login}" sec:authorize="isAnonymous()" class="btn btn-light">Login</a>
+        </div>
+    </div>
+</header>
+<div class="container-fluid">
+    <div class="row">
+        <aside class="col-md-3 category-list">
+            <h4>Actions</h4>
+            <div class="d-grid gap-2" sec:authorize="isAuthenticated()">
+                <a class="btn btn-primary btn-post-item" th:href="@{/newObject}">Post an Item</a>
+                <a class="btn btn-danger btn-delete-item" th:href="@{/delete-item}">Delete Item</a>
+            </div>
+        </aside>
+        
+        <main class="col-md-9 main-content">
+            <!-- AVAILABLE ITEMS -->
+            <section class="content-section mb-5">
+                <h2>Available Items</h2>
+                <div th:if="${#lists.isEmpty(availableItems)}"><p class="text-muted">No items from other users are available.</p></div>
+                <!-- V-- CAMBIO: Se usa la rejilla de Bootstrap --V -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" th:unless="${#lists.isEmpty(availableItems)}">
+                    <!-- V-- CAMBIO: Cada item es una TARJETA, no un list-group-item --V -->
+                    <div class="col" th:each="item : ${availableItems}">
+                        <div class="card h-100">
+                            <img th:src="@{${item.picture ?: '/images/placeholder.png'}}" class="card-img-top" alt="Item image">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${item.name}">Item Name</h5>
+                                <a th:href="@{'/item/' + ${item.id}}" class="btn btn-outline-primary mt-auto">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- RENTED ITEMS -->
+            <section class="content-section mb-5">
+                <h2>Rented Items</h2>
+                <div th:if="${#lists.isEmpty(rentedItems)}"><p class="text-muted">You are not currently renting any items.</p></div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" th:unless="${#lists.isEmpty(rentedItems)}">
+                    <div class="col" th:each="item : ${rentedItems}">
+                        <div class="card h-100 border-primary">
+                            <img th:src="@{${item.picture ?: '/images/placeholder.png'}}" class="card-img-top" alt="Item image">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${item.name}">Item Name</h5>
+                                <a th:href="@{'/item/' + ${item.id}}" class="btn btn-primary mt-auto">View & Return</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <hr sec:authorize="isAuthenticated()">
+            
+            <!-- YOUR OFFERED ITEMS -->
+            <section class="content-section mb-5" sec:authorize="isAuthenticated()">
+                <h2>Your Offered Items</h2>
+                <div th:if="${#lists.isEmpty(yourOfferedItems)}"><p class="text-muted">You have no items available to be lent.</p></div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" th:unless="${#lists.isEmpty(yourOfferedItems)}">
+                    <div class="col" th:each="item : ${yourOfferedItems}">
+                        <div class="card h-100">
+                             <img th:src="@{${item.picture ?: '/images/placeholder.png'}}" class="card-img-top" alt="Item image">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${item.name}">Item Name</h5>
+                                <a th:href="@{'/item/' + ${item.id}}" class="btn btn-outline-primary mt-auto">Manage Item</a>
+                            </div>
+                            <div class="card-footer">
+                               <span class="badge bg-success" th:text="${item.status}">Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ITEMS YOU'VE LENT -->
+            <section class="content-section mb-5" sec:authorize="isAuthenticated()">
+                <h2>Items You've Lent</h2>
+                <div th:if="${#lists.isEmpty(itemsYouveLent)}"><p class="text-muted">None of your items are currently lent out.</p></div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" th:unless="${#lists.isEmpty(itemsYouveLent)}">
+                     <div class="col" th:each="item : ${itemsYouveLent}">
+                        <div class="card h-100 border-warning">
+                             <img th:src="@{${item.picture ?: '/images/placeholder.png'}}" class="card-img-top" alt="Item image">
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${item.name}">Item Name</h5>
+                                <a th:href="@{'/item/' + ${item.id}}" class="btn btn-outline-secondary mt-auto">Manage Item</a>
+                            </div>
+                            <div class="card-footer">
+                                <span class="badge bg-warning text-dark" th:text="${item.status}">Unavailable</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+</body>
+</html>

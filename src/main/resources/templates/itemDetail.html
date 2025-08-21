@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+<head>
+    <title>Item Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+<body class="itemDetail-page">
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-7">
+            
+            <div class="item-card text-center" th:if="${item != null}">
+                <img th:src="@{${item.picture ?: '/images/placeholder.png'}}" alt="Item Image" class="item-image mb-4"/>
+                <h2 class="item-title" th:text="${item.name}">Item Name</h2>        
+                <hr class="item-divider">
+                <div class="item-details my-4">
+                    <p>
+                        <strong>Description:</strong><br>
+                        <span th:text="${item.description}">desc</span>
+                    </p>
+                    <p>
+                        <strong>Category:</strong><br>
+                        <span th:text="${item.category}">category</span>
+                    </p>
+                    <p>
+                        <strong>Status:</strong><br>
+                        <span th:text="${item.status}" class="badge fs-6" th:classappend="${item.status == 'Available'} ? 'bg-success' : 'bg-warning text-dark'">status</span>
+                    </p>
+                </div>
+
+                <hr class="item-divider">
+
+                <div class="action-buttons my-4">
+                    <!-- Alquilar un ítem de 'Available Items' -->
+                    <a th:href="@{/scanner(id=${item.id})}" 
+                       th:if="${user != null and item.owner?.id != user.id and !item.rented}" 
+                       class="btn btn-success btn-lg">Scan Barcode to Rent</a>
+                    
+                    <!-- Devolver un ítem de 'Rented Items' -->
+                    <a th:href="@{/renter/return-item/{id}(id=${item.id})}" 
+                       th:if="${user != null and item.rentedBy?.id == user.id}" 
+                       class="btn btn-warning btn-lg">Give this item back</a>
+
+                    <!-- OWNER: Ofrecer un ítem de 'Your Offered Items' -->
+                    <a th:href="@{/owner/give-item/{id}(id=${item.id})}" 
+                       th:if="${user != null and item.owner?.id == user.id and !item.rented}" 
+                       class="btn btn-success btn-lg">Give this item</a>
+
+                    <!-- OWNER: Recuperar un ítem de 'Items You've Lent' -->
+                    <a th:href="@{/owner/get-item-back/{id}(id=${item.id})}" 
+                       th:if="${user != null and item.owner?.id == user.id and item.rented}" 
+                       class="btn btn-warning btn-lg">Get this item back</a>
+                </div>
+
+                <div class="mt-4">
+                     <a href="/allObjects" class="back-link">← Back to Dashboard</a>
+                </div>
+
+            </div>
+            <!-- Mensaje por si el item no existe -->
+            <div class="item-card text-center" th:if="${item == null}">
+                 <h2 class="item-title">Item not found</h2>
+                 <p>The requested item could not be found or has been removed.</p>
+                 <a href="/allObjects" class="btn btn-outline-secondary mt-3">← Back to Dashboard</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
